@@ -1,0 +1,14 @@
+services:
+  - redis-server
+  - memcached
+
+language: java
+
+jdk:
+  - oraclejdk8
+
+before_script:
+  - cat hdconfig.properties | sed -e s/your_api_username/$API_USERNAME/ -e s/your_api_secret/$API_SECRET/ -e s/your_api_siteId/$API_SITE_ID/ > hd4CloudConfig.properties
+  - cat hd4CloudConfig.properties | sed -e s/useLocal=false/useLocal=true/ > hd4UltimateConfig.properties
+
+script: ./gradlew build

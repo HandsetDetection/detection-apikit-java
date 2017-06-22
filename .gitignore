@@ -1,0 +1,10 @@
+/build/
+/.gradle/
+/.nb-gradle/
+/target/
+/hd4CloudConfig.properties
+/hd4CloudProxyConfig.properties
+/hd4UltimateConfig.properties
+/src/test/java/com/handsetdetection/Devel.java
+/nbproject/
+.nb-gradle-properties
