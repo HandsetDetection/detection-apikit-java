@@ -343,7 +343,6 @@ public class HDBase {
      * @return Cleansed string
      **/
     String extraCleanStr(String str) {
-        str = str.toLowerCase();
         for(char c: extraUAFilterList) {
             str = str.replace("" + c, "");
         }
@@ -358,7 +357,6 @@ public class HDBase {
      * @return cleansed string
      **/
     String cleanStr(String str) {
-        str = str.toLowerCase();
         for(char c: deviceUAFilterList) {
             str = str.replace("" + c, "");
         }

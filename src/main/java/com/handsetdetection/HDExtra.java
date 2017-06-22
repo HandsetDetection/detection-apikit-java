@@ -78,7 +78,7 @@ public class HDExtra extends HDBase {
         List<String> order = new ArrayList<>(this.detectionConfigUA.get(cls + "-ua-order"));
         Set<String> keys = headers.keySet();
 
-        keys.stream().filter((key) -> (!order.contains(key) && key.toLowerCase().startsWith("x-"))).forEachOrdered((key) -> {
+        keys.stream().filter((key) -> (!order.contains(key) && key.startsWith("x-"))).forEachOrdered((key) -> {
             order.add(key);
         }); // Append any x- headers to the list of headers to check
 
@@ -146,7 +146,7 @@ public class HDExtra extends HDBase {
 
             if (agent != null && !agent.isEmpty()) {
                 for(String code: languageList.keySet()) {
-                    if (agent.toLowerCase().contains(code) && agent.toLowerCase().matches(".*[; \\(]" + code + "[; \\)].*")) {
+                    if (agent.contains(code) && agent.matches(".*[; \\(]" + code + "[; \\)].*")) {
                         extra.getHdSpecs().setGeneralLanguage(code);
                         extra.getHdSpecs().setGeneralLanguageFull(languageList.get(code));
                         return extra;

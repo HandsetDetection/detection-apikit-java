@@ -230,8 +230,8 @@ public class HDDevice extends HDBase {
 
         // lowercase headers on the way in.
         Map<String, String> headers = new HashMap<>();
-        headersArg.keySet().forEach((k) -> {
-            headers.put(k.toLowerCase(), headersArg.get(k));
+        headersArg.entrySet().forEach((k) -> {
+            headers.put(k.getKey().toLowerCase(), k.getValue().toLowerCase());
         });
         String hardwareInfo = headers.get("x-local-hardwareinfo");
         headers.remove("x-local-hardwareinfo");
@@ -462,7 +462,7 @@ public class HDDevice extends HDBase {
 
         // Match nominated headers ahead of x- headers
         List<String> order = new ArrayList<>(this.detectionConfigUA.get("device-ua-order"));
-        headers.keySet().stream().filter((key) -> (!order.contains(key) && key.toLowerCase().startsWith("x-"))).forEachOrdered((key) -> {
+        headers.keySet().stream().filter((key) -> (!order.contains(key) && key.startsWith("x-"))).forEachOrdered((key) -> {
             order.add(key);
         });
 
@@ -644,11 +644,11 @@ public class HDDevice extends HDBase {
 
         // Sanitize headers & cleanup language
         headers.entrySet().forEach((e) -> {
-            String key = e.getKey().toLowerCase();
+            String key = e.getKey();
             String value = e.getValue();
             if (key.equals("accept-language") || key.equals("content-language")) {
                 key = "language";
-                String[] tokens = value.toLowerCase().replaceAll(" ", "").split("[,;]");
+                String[] tokens = value.replace(" ", "").split("[,;]");
                 if (tokens.length > 0 && !tokens[0].isEmpty()) {
                     value = tokens[0];
                 } else {
