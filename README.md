@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/HandsetDetection/java-apikit.svg?branch=master)](https://travis-ci.org/HandsetDetection/java-apikit)
-[ ![Download](https://api.bintray.com/packages/bintray/jcenter/com.handsetdetection.java-apikit%3Ajava-apikit/images/download.svg) ](https://bintray.com/bintray/jcenter/com.handsetdetection.java-apikit%3Ajava-apikit/_latestVersion) 
+[![Build Status](https://travis-ci.org/HandsetDetection/detection-apikit-java.svg?branch=master)](https://travis-ci.org/HandsetDetection/detection-apikit-java)
+[ ![Download](https://api.bintray.com/packages/bintray/jcenter/com.handsetdetection.detection-apikit-java%3Adetection-apikit-java/images/download.svg) ](https://bintray.com/bintray/jcenter/com.handsetdetection.detection-apikit-java%3Adetection-apikit-java/_latestVersion) 
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.png?v=103)](https://opensource.org/licenses/mit-license.php)
 
 # Java API Kit v4, implementing v4.0 of the HandsetDetection API. #
@@ -13,20 +13,20 @@ depending on your configuration.
 ### Maven ###
 
 	<dependency>
- 		<groupId>com.handsetdetection.java-apikit</groupId>
- 		<artifactId>java-apikit</artifactId>
+ 		<groupId>com.handsetdetection.detection-apikit-java</groupId>
+ 		<artifactId>detection-apikit-java</artifactId>
  		<version>4.2.0</version>
  		<type>pom</type>
 	</dependency>
 
 ### Gradle ###
 
-	compile 'com.handsetdetection.java-apikit:java-apikit:4.2.0'
+	compile 'com.handsetdetection.detection-apikit-java:detection-apikit-java:4.2.0'
 
 ### Ivy ###
 
-	<dependency org='com.handsetdetection.java-apikit' name='java-apikit' rev='4.2.0'>
-		<artifact name='java-apikit' ext='pom' ></artifact>
+	<dependency org='com.handsetdetection.detection-apikit-java' name='detection-apikit-java' rev='4.2.0'>
+		<artifact name='detection-apikit-java' ext='pom' ></artifact>
 	</dependency>
 
 ## Configuration ##
