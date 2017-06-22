@@ -15,17 +15,17 @@ depending on your configuration.
 	<dependency>
  		<groupId>com.handsetdetection.java-apikit</groupId>
  		<artifactId>java-apikit</artifactId>
- 		<version>4.1.2</version>
+ 		<version>4.2.0</version>
  		<type>pom</type>
 	</dependency>
 
 ### Gradle ###
 
-	compile 'com.handsetdetection.java-apikit:java-apikit:4.1.2'
+	compile 'com.handsetdetection.java-apikit:java-apikit:4.2.0'
 
 ### Ivy ###
 
-	<dependency org='com.handsetdetection.java-apikit' name='java-apikit' rev='4.1.2'>
+	<dependency org='com.handsetdetection.java-apikit' name='java-apikit' rev='4.2.0'>
 		<artifact name='java-apikit' ext='pom' ></artifact>
 	</dependency>
 
@@ -125,7 +125,7 @@ API Kit configuration files can be downloaded directly from Handset Detection.
 
 ## Flexible Caching Options
 
-Version 4.1.* includes several caching options:
+This version includes several caching options:
 
 * In-memory (Guava Cache)
 * Filesystem
@@ -165,7 +165,7 @@ or simply,
 
 ### Using Redis
 
-From version 4.1.11 we also have Redis as a caching option. Use a caching config as follows:
+We also have Redis as a caching option. Use a caching config as follows:
 
     cache.redis.uri = redis://localhost/
 
