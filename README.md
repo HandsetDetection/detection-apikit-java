@@ -1,33 +1,30 @@
 [![Build Status](https://travis-ci.org/HandsetDetection/detection-apikit-java.svg?branch=master)](https://travis-ci.org/HandsetDetection/detection-apikit-java)
-[ ![Download](https://api.bintray.com/packages/bintray/jcenter/com.handsetdetection.detection-apikit-java%3Adetection-apikit-java/images/download.svg) ](https://bintray.com/bintray/jcenter/com.handsetdetection.detection-apikit-java%3Adetection-apikit-java/_latestVersion) 
-[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.png?v=103)](https://opensource.org/licenses/mit-license.php)
+[ ![Download](https://api.bintray.com/packages/handsetdetection/mvn/detection-apikit-java/images/download.svg) ](https://bintray.com/handsetdetection/mvn/detection-apikit-java/_latestVersion)
+[![MIT License](https://badges.frapsoft.com/os/mit/mit.png?v=103)](https://opensource.org/licenses/mit-license.php)
 
 # Java API Kit v4, implementing v4.0 of the HandsetDetection API. #
 
-API Kits can use our web service or resolve detections locally 
+API Kits can use our web service or resolve detections locally
 depending on your configuration.
 
 
 ## Installation ##
 
-### Maven ###
+The Java API Kit is released via JCenter. You can include it in your project using your preferred build tool, such as Gradle, Maven, SBT...
 
-	<dependency>
- 		<groupId>com.handsetdetection.detection-apikit-java</groupId>
- 		<artifactId>detection-apikit-java</artifactId>
- 		<version>4.2.0</version>
- 		<type>pom</type>
-	</dependency>
+Example configuration for Gradle:
 
-### Gradle ###
+    repositories {
+        jcenter()
+    }
 
-	compile 'com.handsetdetection.detection-apikit-java:detection-apikit-java:4.2.0'
+    dependencies {
+        compile 'com.handsetdetection:detection-apikit-java:4.2.0'
+    }
 
-### Ivy ###
 
-	<dependency org='com.handsetdetection.detection-apikit-java' name='detection-apikit-java' rev='4.2.0'>
-		<artifact name='detection-apikit-java' ext='pom' ></artifact>
-	</dependency>
+For detailed instructions, direct downloads and other information visit the [Java API Kit page on Bintray](https://bintray.com/handsetdetection/mvn/detection-apikit-java).
+
 
 ## Configuration ##
 

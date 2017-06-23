@@ -5,7 +5,7 @@ plugins {
     id 'com.jfrog.bintray' version '1.7.3'
 }
 
-group = 'com.handsetdetection.detection-apikit-java'
+group = 'com.handsetdetection'
 version = '4.2.0'
 
 repositories {
@@ -69,16 +69,16 @@ bintray {
     user = System.getenv('BINTRAY_USER')
     key = System.getenv('BINTRAY_KEY')
     pkg {
-        repo = 'java'
+        repo = 'mvn'
         name = 'detection-apikit-java'
-        userOrg = System.getenv('BINTRAY_USER_ORG')
+        userOrg = 'handsetdetection'
         licenses = ['Apache-2.0']
         vcsUrl = 'https://github.com/HandsetDetection/detection-apikit-java.git'
         desc = 'Handset Detection v4 API kit for Java'
-        websiteUrl = 'http://www.handsetdetection.com/'
+        websiteUrl = 'https://www.handsetdetection.com/'
         issueTrackerUrl = 'https://github.com/HandsetDetection/detection-apikit-java/issues'
-        // githubRepo = 'HandsetDetection/detection-apikit-java'
-        // githubReleaseNotesFile = 'README.md'
+        githubRepo = 'HandsetDetection/detection-apikit-java'
+        githubReleaseNotesFile = 'README.md'
         version {
             name = project.version
             vcsTag = project.version

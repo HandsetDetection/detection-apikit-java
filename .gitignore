@@ -6,5 +6,7 @@
 /hd4CloudProxyConfig.properties
 /hd4UltimateConfig.properties
 /src/test/java/com/handsetdetection/Devel.java
+/detection-apikit-java.iml
+/.idea/
 /nbproject/
 .nb-gradle-properties
