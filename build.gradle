@@ -1,0 +1,88 @@
+plugins {
+    id 'java-library'
+    id 'jacoco'
+    id 'maven'
+    id 'com.jfrog.bintray' version '1.7.3'
+}
+
+group = 'com.handsetdetection'
+version = '4.2.0'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    api 'org.apache.commons:commons-lang3:3.5'
+
+    implementation 'com.google.guava:guava:21.0',
+                   'com.fasterxml.jackson.core:jackson-core:2.8.6',
+                   'com.fasterxml.jackson.core:jackson-annotations:2.8.6',
+                   'com.fasterxml.jackson.core:jackson-databind:2.8.6',
+                   'commons-codec:commons-codec:1.10',
+                   'biz.paluch.redis:lettuce:3.5.0.Final',
+                   'net.spy:spymemcached:2.12.3'
+
+    testImplementation 'junit:junit:4.12'
+}
+
+compileJava {
+    options.compilerArgs << '-Xlint:unchecked' << '-Xlint:deprecation'
+}
+
+compileTestJava {
+    options.compilerArgs << '-Xlint:unchecked' << '-Xlint:deprecation'
+}
+
+test {
+    testLogging.showStandardStreams = true
+}
+
+jar {
+    manifest {
+        attributes('Implementation-Title': project.name,
+                   'Implementation-Version': project.version)
+    }
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+
+rootProject.tasks.getByName('build').dependsOn sourcesJar
+rootProject.tasks.getByName('build').dependsOn javadocJar
+
+bintray {
+    publish = true
+    configurations = ['archives']
+    user = System.getenv('BINTRAY_USER')
+    key = System.getenv('BINTRAY_KEY')
+    pkg {
+        repo = 'mvn'
+        name = 'detection-apikit-java'
+        userOrg = 'handsetdetection'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/HandsetDetection/detection-apikit-java.git'
+        desc = 'Handset Detection v4 API kit for Java'
+        websiteUrl = 'https://www.handsetdetection.com/'
+        issueTrackerUrl = 'https://github.com/HandsetDetection/detection-apikit-java/issues'
+        githubRepo = 'HandsetDetection/detection-apikit-java'
+        githubReleaseNotesFile = 'README.md'
+        version {
+            name = project.version
+            vcsTag = project.version
+            released  = new Date()
+        }
+    }
+}
