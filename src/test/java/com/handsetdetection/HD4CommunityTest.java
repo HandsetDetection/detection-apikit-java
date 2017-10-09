@@ -342,8 +342,8 @@ public class HD4CommunityTest {
         assertEquals("", reply.getHdSpecs().getGeneralType());
         assertEquals("Facebook", reply.getHdSpecs().getGeneralApp());
         assertEquals("9.0", reply.getHdSpecs().getGeneralAppVersion());
-        assertEquals("", reply.getHdSpecs().getGeneralBrowser());
-        assertEquals("", reply.getHdSpecs().getGeneralBrowserVersion());
+        assertEquals("Safari Webview", reply.getHdSpecs().getGeneralBrowser());
+        assertEquals("537.51", reply.getHdSpecs().getGeneralBrowserVersion());
 
         assertNotNull(reply.getHdSpecs().getDisplayPixelRatio());
         assertNotNull(reply.getHdSpecs().getDisplayPpi());
