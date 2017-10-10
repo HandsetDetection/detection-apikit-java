@@ -19,7 +19,7 @@ Example configuration for Gradle:
     }
 
     dependencies {
-        compile 'com.handsetdetection:detection-apikit-java:4.2.0'
+        compile 'com.handsetdetection:detection-apikit-java:4.2.1'
     }
 
 

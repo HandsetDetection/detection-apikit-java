@@ -213,7 +213,7 @@ public class HDDevice extends HDBase {
     /**
      * Perform a local detection
      *
-     * @param headers HTTP headers as an assoc array. keys are standard http header names eg user-agent, x-wap-profile
+     * @param headersArg HTTP headers as an assoc array. keys are standard http header names eg user-agent, x-wap-profile
      * @return true on success, false otherwise
      */
     boolean localDetect(Map<String, String> headersArg) {
